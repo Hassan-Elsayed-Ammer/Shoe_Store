@@ -5,7 +5,6 @@ import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.hassan.elsayed.ammer.shoe_store.R
 import com.hassan.elsayed.ammer.shoe_store.databinding.FragmentShoesListBinding
@@ -28,7 +27,7 @@ class ShoesListFragment : Fragment() {
 
         viewModel.getShoes().observe(viewLifecycleOwner) { shoesList ->
             for (item in shoesList) {
-                addShowToList(container, item)
+                addShoeToList(container, item)
             }
         }
 
@@ -53,7 +52,7 @@ class ShoesListFragment : Fragment() {
     }
 
 
-    private fun addShowToList(  container: ViewGroup?, shoe: Shoe ) {
+    private fun addShoeToList(container: ViewGroup?, shoe: Shoe ) {
         val bindingItemShoe: ItemShoeBinding =
             DataBindingUtil.inflate(layoutInflater, R.layout.item_shoe, container, false)
         bindingItemShoe.shoe = shoe
