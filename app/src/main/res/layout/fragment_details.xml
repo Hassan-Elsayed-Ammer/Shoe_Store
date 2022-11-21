@@ -1,14 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.DetailsFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+        <variable
+            name="shoe"
+            type="com.hassan.elsayed.ammer.shoe_store.model.Shoe" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.fragments.DetailsFragment">
 
-</FrameLayout>
+        <EditText
+            android:id="@+id/et_shoe_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="24dp"
+            android:hint=" Enter name "
+            android:text="@={shoe.name}"
+            android:paddingStart="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/et_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint=" Enter Size "
+            android:paddingStart="14dp"
+            android:text="@={shoe.size}"
+            app:layout_constraintEnd_toEndOf="@+id/et_shoe_name"
+            app:layout_constraintStart_toStartOf="@+id/et_shoe_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_shoe_name"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <EditText
+            android:id="@+id/et_company"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint=" Enter Company Name "
+            android:text="@={shoe.company}"
+            android:paddingStart="14dp"
+            app:layout_constraintEnd_toEndOf="@+id/et_shoe_name"
+            app:layout_constraintStart_toStartOf="@+id/et_shoe_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_size"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint=" Enter The Description "
+            android:text="@={shoe.description}"
+            android:paddingStart="14dp"
+            app:layout_constraintEnd_toEndOf="@+id/et_shoe_name"
+            app:layout_constraintStart_toStartOf="@+id/et_shoe_name"
+            app:layout_constraintTop_toBottomOf="@+id/et_company"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="87dp"
+            android:layout_marginEnd="32dp"
+            android:text="Save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_cancel"
+            app:layout_constraintTop_toBottomOf="@+id/et_description" />
+
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_save"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_description" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

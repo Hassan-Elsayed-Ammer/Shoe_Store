@@ -52,6 +52,11 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
 
     //ViewModel&LiveData
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 
     //Android Material duplicated
     //implementation "com.google.android.material:material:"1.1.0-alpha07""
